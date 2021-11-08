@@ -12,6 +12,7 @@ int main(){
 	int max = 0, len = 4, sum = 0;
 	int** field = creat_field(len);
 	while (1){
+		int flag = 1;
 		cout_max_and_sum((max = MAX(max_filed(field, len), max)) ,sum);
 		printf_field(field, len);
 		if (!check_moves(field, len) || max == 2048)
@@ -29,7 +30,6 @@ int main(){
 			clear(4);
 			continue;
 		}
-erro_sign:
 		char sign = input();
 		if (sign == 'a' || sign == 'A')
 			sum += shift_left(field, len);
@@ -42,9 +42,12 @@ erro_sign:
 		else if (sign == 'q')
 			return 0;
 		else
-		       goto erro_sign;
+			flag = 0;
 
 		clear(len + 3); 
+		if (!flag)
+			continue;
+
 	 	rand_field(field, len);
 	}
 	return 0;
