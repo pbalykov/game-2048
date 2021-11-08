@@ -1,68 +1,56 @@
-#include <termios.h>
-#include <unistd.h>
+#include <stdlib.h>
+#include <time.h>
 
-#include "check.h"
-#include "render.h"
-#include "change.h"
-
-
-char input()
-{
-	char znak;
-	struct termios inp = {0}; 
-	tcgetattr(0, &inp);
-	inp.c_lflag &= ~ICANON;
-	inp.c_lflag &= ~ECHO;
-	inp.c_cc[VMIN] = 1;
-	inp.c_cc[VTIME] = 0;
-	tcsetattr(0, TCSANOW, &inp);
-	read(0, &znak, 1);
-	inp.c_lflag |= ICANON;
-	inp.c_lflag |= ECHO;
-	tcsetattr(0, TCSADRAIN, &inp);
-	return znak;
-}
+#include "work_field.h"
+#include "iostream.h"
+#include "check_field.h"
 
 
 
-
-int main()
-{
-	int a[4][4] = {0}, max_rec = 0;
-	rando(a);
-	rando(a);
-        while (1)
-	{
-		field(a);
-		char znak = input();
-		switch(znak)
-		{
-			case 'w':
-				zdvig_up(a);
-		 		break;
-		        case 's':
-				zdvig_down(a);
-				break;
-			case 'a':
-				zdvig_left(a);
-				break;
-			case 'd':
-				zdvig_right(a);
-				break;
-		        case 'q':
-				print_end((max(a) > max_rec? max(a) : max_rec));
+int main(){
+	srand(time(NULL));
+	int max = 0, len = 4, sum = 0;
+	int** field = creat_field(len);
+	while (1){
+		cout_max_and_sum((max = MAX(max_filed(field, len), max)) ,sum);
+		printf_field(field, len);
+		if (!check_moves(field, len) || max == 2048)
+		{	
+			free(field);
+			clear(len + 3);
+			print(max != 2048 ? "\t   \e[38;5;183;1mВаш результат\e[m" : "\t\e[38;5;183;1mПоздравляю вы выйграли\e[m");
+			cout_max_and_sum(max, sum);
+			print("\t\e[38;5;113;1mНажмите q чтобы выйти:\e[m");
+			if (input() == 'q')
 				return 0;
-		}   
-		field_clear();
-		rando(a);
-		if (!creak)
-		{
-			print_end((max(a) > max_rec? max(a) : max_rec));
-		        max_rec = (max(a) > max_rec? max(a) : max_rec);
-			break;
+
+			field = creat_field(len);
+			int max = 0, sum = 0;
+			clear(4);
+			continue;
 		}
+erro_sign:
+		char sign = input();
+		if (sign == 'a' || sign == 'A')
+			sum += shift_left(field, len);
+		else if (sign == 'd' || sign == 'D')
+			sum += shift_right(field, len);
+		else if (sign == 's' || sign == 'S')
+			sum += shift_down(field, len);
+		else if (sign == 'w' || sign == 'W')
+			sum += shift_up(field, len);
+		else if (sign == 'q')
+			return 0;
+		else
+		       goto erro_sign;
+
+		clear(len + 3); 
+	 	rand_field(field, len);
 	}
 	return 0;
-
-
 }
+		 
+       		
+	
+	
+	
