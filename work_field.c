@@ -2,7 +2,6 @@
 
 int** creat_field(int len){
 	int **data = (int**) malloc (sizeof(int*) * len);
-	
 	for (int i = 0; i < len; i++)
 		data[i] = (int*) calloc (len, sizeof(int));
 	
