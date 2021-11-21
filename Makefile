@@ -13,3 +13,4 @@ clean:
 
 run:main 
 	./Game_2048
+	
