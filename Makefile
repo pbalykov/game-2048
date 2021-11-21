@@ -3,10 +3,10 @@
 all: main
 
 main: main.o work_field.o iostream.o check_field.o
-	gcc *.o -o Game_2048 -g
+	gcc *.o -o Game_2048 
 
 %.o: %.c
-	gcc -c $< -o $*.o -g
+	gcc -c $< -o $*.o
 
 clean:
 	rm -f *.o Game_2048
