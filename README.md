@@ -2,12 +2,11 @@
 
 Terminal game 2048. The game will earn current on the Linux terminal. 
 
-#Assembling
+# Assembling
 After installing and unpacking the archive, the files must be assembled using make, 
 the program is run using make run (clean binaries also have make clean) or ./Game\_2048. 
 
-#Controls
-Controls 
+# Controls
 W/w-up 
 A/a-left 
 S/s-down 
