@@ -7,4 +7,11 @@ After installing and unpacking the archive, the files must be assembled using ma
 the program is run using make run (clean binaries also have make clean) or ./Game\_2048. 
 
 #Controls
-Controls W/w-up A/a-left S/s-down D/d-right q-exit. The game is written in c.
+Controls 
+W/w-up 
+A/a-left 
+S/s-down 
+D/d-right 
+q-exit. 
+
+The game is written in c.
