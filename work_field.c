@@ -11,6 +11,12 @@ int** creat_field(int len){
 	return data;
 }
 
+void free_field(int** data, int len){
+	for (int i = 0; i < len; i++)
+		free(data[i]);
+	free(data);
+}
+
 int rand_field(int** data, int len){
 	struct pair values_rand = {-1, -1};
 	int n = 0;
