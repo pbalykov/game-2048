@@ -11,6 +11,6 @@ W/w-up
 A/a-left 
 S/s-down 
 D/d-right 
-q-exit. 
+q-exit 
 
 The game is written in c.
