@@ -46,7 +46,6 @@ int main(){
 			else
 				flag_sign = 0;
 		}while(!flag_sign);
-
 		clear(len + 3);
 	 	rand_field(field, len);
 	}
