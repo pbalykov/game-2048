@@ -17,7 +17,7 @@ int main(){
 		printf_field(field, len);
 		if (!check_moves(field, len) || max == 2048)
 		{	
-			free(field);
+			free_field(field, len);
 			clear(len + 3);
 			print(max != 2048 ? "\t   \e[38;5;183;1mВаш результат\e[m" : "\t\e[38;5;183;1mПоздравляю вы выйграли\e[m");
 			cout_max_and_sum(max, sum);
