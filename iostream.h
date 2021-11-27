@@ -1,4 +1,4 @@
-#pragma onse
+#pragma once
 
 #include <termios.h>
 #include <unistd.h>
