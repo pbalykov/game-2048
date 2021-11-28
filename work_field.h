@@ -1,4 +1,4 @@
-#pragma onse
+#pragma once
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,6 +13,7 @@ struct pair
 
 
 int** creat_field(int len); 
+void free_list(int** data, int len);
 int rand_field(int** data, int len);
 int shift_left(int** data, int len);
 int shift_right(int** data, int len);

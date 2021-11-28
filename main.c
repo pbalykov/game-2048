@@ -17,11 +17,11 @@ int main(){
 		printf_field(field, len);
 		if (!check_moves(field, len) || max == 2048)
 		{	
-			free(field);
+			free_list(field, len);
 			clear(len + 3);
-			print(max != 2048 ? "\t   \e[38;5;183;1mВаш результат\e[m" : "\t\e[38;5;183;1mПоздравляю вы выйграли\e[m");
+			print(max != 2048 ? "\t   \e[38;5;183;1mYour result\e[m" : "   \e[38;5;183;1mCongratulations you have won\e[m");
 			cout_max_and_sum(max, sum);
-			print("\t\e[38;5;113;1mНажмите q чтобы выйти:\e[m");
+			print("\t  \e[38;5;113;1mPress q to exit:\e[m");
 			if (input() == 'q')
 				return 0;
 

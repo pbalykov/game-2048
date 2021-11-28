@@ -1,4 +1,4 @@
-#pragma onse
+#pragma once
 
 
 int MAX(int a, int b);
