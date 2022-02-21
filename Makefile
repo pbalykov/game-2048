@@ -2,14 +2,14 @@
 
 all: main
 
-main: main.o work_field.o iostream.o check_field.o
-	gcc *.o -o Game_2048 -g
+main: main.o workField.o shifts.o render.o cbreak.o sideEffects.o
+	gcc $^ -o Game-2048 
 
 %.o: %.c
-	gcc -c $< -o $*.o -g
+	gcc -Iheaders -c $< -o $*.o
 
 clean:
-	rm -f *.o Game_2048
+	rm -f *.o Game-2048
 
 run:main 
-	./Game_2048
+	./Game-2048

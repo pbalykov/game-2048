@@ -1,10 +1,31 @@
-# Game-2048
+#Game 2048
 
-Terminal game 2048. The game will earn current on the Linux terminal. 
+Game 2048 for unix terminals.
 
-#Assembling
-After installing and unpacking the archive, the files must be assembled using make, 
-the program is run using make run (clean binaries also have make clean) or ./Game\_2048. 
+##Installation
 
-#Controls
-Controls W/w-up A/a-left S/s-down D/d-right q-exit. The game is written in c.
++ git clone https://github.com/pbalykov/game-2048.git
+  (the file is being installed)
++ cd game-2048 (go to the folder)
++ make or make run
+ (the first method collects, the second collects and launches)
++ ./Game-2048
+  (starting the game)
+
+
+##Controls
+
++ W, w and (up arrow) -> UP
++ S, s and (down arrow) -> DOWN
++ A, a and (left arrow) -> LEFT
++ D, d and (right arrow) -> RIGHT
++ q -> exit
+
+
+##About the code
+
+The code is written in C.
+The head folder contains object files, 
+controls are done using сbreak and select.
+Also, the field is made dynamically,
+although you can do it to everyone's taste.
