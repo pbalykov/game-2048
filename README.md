@@ -24,4 +24,5 @@ Game 2048 for unix terminals.
 
 ## About the code
 
-The code is written in C. The headers folder contains header files, controls are executed using break and select. Also, the field is made dynamically, although you can do it for every taste.
+The code is written in C. The headers folder contains header files, controls are executed using break and select. 
+Also, the field is made dynamically, although you can do it for every taste.
