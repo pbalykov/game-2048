@@ -28,22 +28,20 @@ void printBarEnd(const int max, const int score, const size_t len){
 	tableRows("\u250C", "\u2500", "\u2510\n", len);
 	printf("\u2502\e[38;5;208;1mScore:%*d\e[0m\u2502\n", len * 4 + len - 7, score);
 	printf("\u2502");
-	repeat(" ", (len * 4 + len - 2) / 2 - 5);
-	printf("\e[38;5;10;1mGame over!!\e[0m");
-	repeat(" ", (len * 4 + len - 2) / 2 - 5);
+	max == 2048 ? wing(len * 4 + len - 2) : gameOver(len * 4 + len - 2);
 	printf("\u2502\n");
 	printf("\u2502\e[38;5;208;1mMax number:%*d\e[0m\u2502\n", len * 4 + len - 12, max);
 	tableRows("\u2514", "\u2500", "\u2518\n", len);
 }
 
 
-void printField(int** arrField, const size_t len){
+void printField(int** data, const size_t len){
 	tableRows("\u250C", "\u252C", "\u2510\n", len);
 	for (size_t i = 0; i < len; i++){
 		for (size_t j = 0; j < len; j++){
 			printf("\u2502");
-			if (arrField[i][j])
-				printf("\x1b[1;38;5;%sm%4d\x1b[0m", color(arrField[i][j]), arrField[i][j]);
+			if (*(*(data + i) + j))
+				printf("\x1b[1;38;5;%sm%4d\x1b[0m", color(*(*(data + i) + j)), *(*(data + i) + j));
 			else 
 				repeat(" ", 4); 
 		}

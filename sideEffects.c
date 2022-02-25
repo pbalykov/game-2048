@@ -45,5 +45,14 @@ void repeat(const char* string, size_t len){
 	while (len-- && printf("%s", string));
 }
 
+void gameOver(const int lenField){
+	repeat(" ", lenField / 2 - 4);
+	printf("\e[38;5;10;1mGame over!\e[0m");
+	repeat(" ", lenField / 2 - 5);
+}
 
-
+void wing(const int lenField){
+	repeat(" ", lenField / 2 - 3);
+	printf("\e[38;5;10;1mYou win!\e[0m");
+	repeat(" ", lenField / 2 - 4);
+}

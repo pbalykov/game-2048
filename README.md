@@ -1,8 +1,8 @@
-#Game 2048
+# Game 2048
 
 Game 2048 for unix terminals.
 
-##Installation
+## Installation
 
 + git clone https://github.com/pbalykov/game-2048.git
   (the file is being installed)
@@ -13,7 +13,7 @@ Game 2048 for unix terminals.
   (starting the game)
 
 
-##Controls
+## Controls
 
 + W, w and (up arrow) -> UP
 + S, s and (down arrow) -> DOWN
@@ -22,10 +22,6 @@ Game 2048 for unix terminals.
 + q -> exit
 
 
-##About the code
+## About the code
 
-The code is written in C.
-The head folder contains object files, 
-controls are done using сbreak and select.
-Also, the field is made dynamically,
-although you can do it to everyone's taste.
+The code is written in C. The headers folder contains header files, controls are executed using break and select. Also, the field is made dynamically, although you can do it for every taste.
