@@ -98,4 +98,3 @@ char input(){
 	offcbreak();
 	return symbol;
 }
-
