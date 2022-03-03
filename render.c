@@ -40,8 +40,8 @@ void printField(int** data, const size_t len){
 	for (size_t i = 0; i < len; i++){
 		for (size_t j = 0; j < len; j++){
 			printf("\u2502");
-			if (*(*(data + i) + j))
-				printf("\x1b[1;38;5;%sm%4d\x1b[0m", color(*(*(data + i) + j)), *(*(data + i) + j));
+			if (data[i][j])
+				printf("\x1b[1;38;5;%sm%4d\x1b[0m", color(data[i][j]), data[i][j]);
 			else 
 				repeat(" ", 4); 
 		}
