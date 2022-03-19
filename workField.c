@@ -37,15 +37,17 @@ void freeField(int** arrField, const int len){
 }
 
 
-bool wingGame(int** arrField, const int len, int* max){
+bool wingGame(int** data, const int len, int* max){
 	bool endGame = false; 
 	for (int i = 0; i < len; i++){
-		int gap = 0;
+		int prevColumn = 0, prevLine = 0;
 		for (int j = 0; j < len; j++){
-			if ( arrField[i][j] == gap || !arrField[i][j])
+			if (data[i][j] == prevLine || !data[i][j] ||
+    		              data[j][i] == prevColumn || !data[j][i])
 				endGame = true;
-			gap = arrField[i][j] ? arrField[i][j] : gap;
-			*max = MAX(*max, arrField[i][j]); 
+			prevLine = data[i][j] ? data[i][j] : prevLine;
+			prevColumn = data[j][i] ? data[j][i] : prevColumn;
+			*max = MAX(*max, data[i][j]);
 		}
 	}
 	return !endGame;
