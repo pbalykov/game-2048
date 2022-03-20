@@ -50,5 +50,5 @@ bool wingGame(int** data, const int len, int* max){
 			*max = MAX(*max, data[i][j]);
 		}
 	}
-	return !endGame;
+	return !endGame || *max == 2048 ;
 }
