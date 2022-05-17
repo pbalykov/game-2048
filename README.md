@@ -17,7 +17,7 @@ if you have nixos
   (the file is being installed)
 + cd game-2048 (go to the folder)
 + nix-shell -p "import ./config.nix {}"
-  (building a progarma)
+  (building a program)
 + Game-2048
   (starting the game)
 
