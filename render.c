@@ -3,6 +3,7 @@
 #include <sideEffects.h>
 #include <sys/select.h>
 
+
 void exitRetur(const int tmp){
 	offcbreak();
 	oncursor();
@@ -23,7 +24,6 @@ void printBar(const int max, const int score, const size_t len){
 	tableRows("\u2514", "\u2500", "\u2518\n", len);
 }
 
-
 void printBarEnd(const int max, const int score, const size_t len){
 	tableRows("\u250C", "\u2500", "\u2510\n", len);
 	printf("\u2502\e[38;5;208;1mScore:%*d\e[0m\u2502\n", len * 4 + len - 7, score);
@@ -33,7 +33,6 @@ void printBarEnd(const int max, const int score, const size_t len){
 	printf("\u2502\e[38;5;208;1mMax number:%*d\e[0m\u2502\n", len * 4 + len - 12, max);
 	tableRows("\u2514", "\u2500", "\u2518\n", len);
 }
-
 
 void printField(int** data, const size_t len){
 	tableRows("\u250C", "\u252C", "\u2510\n", len);
@@ -67,7 +66,6 @@ char exitOrRestart(){
 		printf("\n");
 	}
 }
-
 
 char input(){
 	fflush(stdout);

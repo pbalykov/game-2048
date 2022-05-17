@@ -25,7 +25,6 @@ bool shiftsLeft(int** arrField, const int len, int* sum){
 	return changesField;
 }
 
-
 bool shiftsRight(int** arrField, const int len, int* sum){
 	bool changesField = false;
 	for (int i = 0; i < len; i++){
