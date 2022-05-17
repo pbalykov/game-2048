@@ -12,6 +12,15 @@ Game 2048 for unix terminals.
 + ./Game-2048
   (starting the game)
 
+if you have nixos
++ git clone https://github.com/pbalykov/game-2048.git
+  (the file is being installed)
++ cd game-2048 (go to the folder)
++ nix-shell -p "import ./config.nix {}"
+  (building a progarma)
++ Game-2048
+  (starting the game)
+
 
 ## Controls
 

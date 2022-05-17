@@ -12,7 +12,7 @@ int main(){
 	int** field = NULL;
 	creatField(&field, LEN);
 	beginGame(LEN * 4 + LEN + 1);
-	int sum = 0, max = 2048;
+	int sum = 0, max = 2;
 	while (game){
 		bool motion = false;
 		if (wingGame(field, LEN, &max)){
