@@ -1,5 +1,5 @@
-#include <sideEffects.h>
 #include <stdio.h>
+#include <sideEffects.h>
 
 
 int lenNumber(int number){
