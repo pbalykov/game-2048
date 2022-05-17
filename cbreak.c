@@ -6,6 +6,7 @@ struct termios getcbreak(){
 	return values;
 }
 
+
 void oncbreak(){
 	struct termios values = getcbreak();
 	values.c_lflag &= ~(ICANON | ECHO);
